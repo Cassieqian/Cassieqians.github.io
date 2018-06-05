@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <title>container</title>
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+    <style>
+        .container{
+            height: 400px;
+        }
+        .container > .row{
+            height: 200px;
+            background: greenyellow;
+        }
+        .container > .row > div{
+            background: red;
+            height: 200px;
+            border: 1px solid #ffffff;
+        }
+
+        .container > .row > div > .row > div{
+            height: 50px;
+            background: blue;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <!--列偏移-->
+        <div class="col-md-6 col-md-offset-2">
+            <!--任何一个盒子当中都可以试用栅格系统-->
+            <!--等份是父容器的宽度决定的-->
+            <!--列嵌套-->
+            <div class="row">
+                <div class="col-xs-9 col-xs-push-3">9</div>
+                <div class="col-xs-3 col-xs-pull-9">3</div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

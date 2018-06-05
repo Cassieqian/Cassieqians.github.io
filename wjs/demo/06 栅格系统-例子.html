@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <title>container</title>
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+    <style>
+        .container{
+            height: 400px;
+        }
+        /*
+        1.需要一行高度200px的行
+        2.在超小  把一行分词两等份
+        3.小      把一行分词三等份
+        4.中     把一行分词四等份
+        5.大     把一行分词六等份
+        */
+        .row{
+            height: 200px;
+            background: yellowgreen;
+        }
+        .row > div{
+            height: 100px;
+            background: blue;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+     <div class="row">
+         <!--响应式栅格系统  xs sm md lg 12-->
+         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"></div>
+         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"></div>
+         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"></div>
+         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"></div>
+         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"></div>
+         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"></div>
+     </div>
+</div>
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

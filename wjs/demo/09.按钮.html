@@ -1,0 +1,73 @@
+<!--html5 骨架-->
+<!DOCTYPE html>
+<!--语言是中文简体-->
+<html lang="zh-cn">
+<head>
+    <!--指定当前页面的字符编码-->
+    <meta charset="utf-8">
+    <!--指定当前浏览器 如果是IE浏览器的时候 用最新的渲染引擎来渲染  edge ie的新版本-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--指定viewport 响应移动端  必须设置viewport  设置才标准格式  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <!--标题-->
+    <title>基本模版</title>
+
+    <!-- 引用bootstrap核心css文件 -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- 如果你需要在IE低版本浏览器 需要两个插件 -->
+    <!--
+        1.html5shiv  html5标签兼容
+        2.respond   不支持media query 的时候   兼容
+    -->
+    <!-- 注意：respond.js  必须在http形式下访问的时候才生效 -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Standard button -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn btn-primary">Primary</button>
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn btn-success">Success</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn btn-info">Info</button>
+
+<!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn btn-warning">Warning</button>
+
+<!-- Indicates a dangerous or potentially negative action -->
+<button type="button" class="btn btn-danger">Danger</button>
+
+<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+<button type="button" class="btn btn-link">Link</button>
+
+
+<div class="input-group">
+    <span class="input-group-addon">@</span>
+    <input type="text" class="form-control" placeholder="Username">
+</div>
+
+<div class="input-group">
+    <input type="text" class="form-control">
+    <span class="input-group-addon">.00</span>
+</div>
+
+<div class="input-group">
+    <span class="input-group-addon">$</span>
+    <input type="text" class="form-control">
+    <span class="input-group-addon">.00</span>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

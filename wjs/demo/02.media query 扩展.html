@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>怎么做到响应式？</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        /*响应式布局容器*/
+        .container{
+            width: 1200px;
+            height: 1000px;
+            background: pink;
+            margin: 0 auto;
+        }
+
+        /*媒体查询*/
+        /*4.在超小屏设备当中(<768px)  布局容器  背景变成 黄色  宽度100%  内容自适应*/
+        .container{
+            width: 100%;
+            background: yellow;
+        }
+
+        /*3.在小屏设备当中(>768px &&　< 992px)  布局容器  背景变成 绿色  宽度变成750px 内容居中*/
+        @media (min-width: 768px){
+            .container{
+                background: green;
+                width: 750px;
+            }
+        }
+        /*2.在中屏设备当中(>992px && < 1200px)  布局容器  背景变成 红色  宽度变成970px 内容居中*/
+        @media (min-width: 992px){
+            .container{
+                background: red;
+                width: 970px;
+            }
+        }
+        /*1.在大屏设备当中 (>1200px) 布局容器  背景变成 蓝色  宽度变成1170px 内容居中*/
+        /*默认是屏幕*/
+        @media (min-width: 1200px){
+            .container{
+                background: blue;
+                width: 1170px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--
+        1.在大屏设备当中  布局容器  背景变成 蓝色  宽度变成1170px 内容居中
+        2.在中屏设备当中  布局容器  背景变成 红色  宽度变成970px 内容居中
+        3.在小屏设备当中  布局容器  背景变成 绿色  宽度变成750px 内容居中
+        4.在超小屏设备当中  布局容器  背景变成 黄色  宽度100%  内容自适应
+    -->
+    <!-- 想到的方法是   利用js来判断当前屏幕的宽度  给特定的样式 -->
+    <!-- media query 媒体查询 -->
+
+    <div class="container"></div>
+</body>
+</html>

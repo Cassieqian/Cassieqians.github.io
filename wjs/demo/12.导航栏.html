@@ -1,0 +1,78 @@
+<!--html5 骨架-->
+<!DOCTYPE html>
+<!--语言是中文简体-->
+<html lang="zh-cn">
+<head>
+    <!--指定当前页面的字符编码-->
+    <meta charset="utf-8">
+    <!--指定当前浏览器 如果是IE浏览器的时候 用最新的渲染引擎来渲染  edge ie的新版本-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--指定viewport 响应移动端  必须设置viewport  设置才标准格式  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <!--标题-->
+    <title>导航条</title>
+
+    <!-- 引用bootstrap核心css文件 -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- 如果你需要在IE低版本浏览器 需要两个插件 -->
+    <!--
+        1.html5shiv  html5标签兼容
+        2.respond   不支持media query 的时候   兼容
+    -->
+    <!-- 注意：respond.js  必须在http形式下访问的时候才生效 -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--
+role="navigation"
+sr-only 类名  screen read only
+aria-expanded="false"
+提供给屏幕阅读器用的  （应用场景 盲人阅读器）
+-->
+<!-- 一个导航条组件容器  带默认样式的  -->
+<nav class="navbar navbar-default" role="navigation">
+    <!--这是一个流式布局容器-->
+    <div class="container">
+        <!--这个组合在移动端会完全显示-->
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!--菜单切换按钮-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <!--屏幕阅读器用的-->
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--logo 商标 区域-->
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <!--导航条内容区域-->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <!--右侧的导航内容-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

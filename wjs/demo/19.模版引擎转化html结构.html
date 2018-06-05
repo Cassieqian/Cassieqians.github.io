@@ -1,0 +1,107 @@
+<!--html5 骨架-->
+<!DOCTYPE html>
+<!--语言是中文简体-->
+<html lang="zh-cn">
+<head>
+    <!--指定当前页面的字符编码-->
+    <meta charset="utf-8">
+    <!--指定当前浏览器 如果是IE浏览器的时候 用最新的渲染引擎来渲染  edge ie的新版本-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--指定viewport 响应移动端  必须设置viewport  设置才标准格式  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <!--标题-->
+    <title>基本模版</title>
+
+    <!-- 引用bootstrap核心css文件 -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- 如果你需要在IE低版本浏览器 需要两个插件 -->
+    <!--
+        1.html5shiv  html5标签兼容
+        2.respond   不支持media query 的时候   兼容
+    -->
+    <!-- 注意：respond.js  必须在http形式下访问的时候才生效 -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+
+</div>
+
+<!--定义模版-->
+<!--type="text/template" 当作字符串解释  不会渲染在页面当中-->
+<!-- 可以运行js <% js %> 才会执行-->
+<!-- 固定的取值的语法  <%= 取值 %> 带html结构-->
+<!-- 固定的取值的语法  <%- 取值 %> 字符串形式-->
+<!--
+<script>alert(0);<\/script>  恶意的javascript脚本  这个脚本算第三方的脚本  跨站脚本攻击 xss
+<% for(var i = 0; i < model.length ; i++){ %>
+        <div>
+            <span ><%=model[i].name%></span>
+            <span ><%-model[i].age%></span>
+        </div>
+    <% } %>
+    <% _.each(model,function(v,k){%>
+        <div>
+            <span ><%=v.name%></span>
+            <span ><%-v.age%></span>
+        </div>
+    <% });%>
+-->
+<script id="template" type="text/template">
+    <table class="table table-bordered">
+        <% $.each(model,function(k,v){%>
+            <tr>
+                <td ><%=v.name%></td>
+                <td ><%-v.age%></td>
+            </tr>
+        <% });%>
+    </table>
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<script src="../lib/underscore/underscore-min.js"></script>
+<script>
+    $(function(){
+        /*准备数据*/
+        var data = [
+            {name:'xjj',age:'<script>alert(0);<\/script>'},
+            {name:'xgg',age:'17'},
+            {name:'xgg',age:'16'},
+            {name:'xgg',age:'15'},
+            {name:'xgg',age:'14'},
+            {name:'xgg',age:'13'},
+            {name:'xgg',age:'12'}
+        ];
+
+        /*数据转化成html结构*/
+        /*怎么样使用？*/
+        /*jquery 是试用 $ 最为全局变量 来使用里面的方法  $.each()*/
+        /*underscore 是试用 _ 最为全局变量 来使用里面的方法 _.each()*/
+
+        /*1获取模版内容*/
+        /*模版是什么？*/
+        var templateContent = $('#template').html();
+        console.log('第一步：'+templateContent);
+        /*2用template方法转化成模版方法*/
+        var templateFuc = _.template(templateContent);
+        console.log('第二步：'+templateFuc);
+        /*3模版方法 传入数据 转化成 html结构*/
+        /* 传入是对象  但是取值  取得是属性 */
+        var templateHtml = templateFuc({model:data});
+        console.log('第三步：'+templateHtml);
+        /*渲染在页面当中*/
+        $('.container').html(templateHtml);
+
+    });
+
+</script>
+
+</body>
+</html>

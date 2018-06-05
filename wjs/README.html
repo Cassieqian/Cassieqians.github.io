@@ -1,0 +1,188 @@
+<p>#微金所</p>
+<h2 id="1-1-项目结构"><a href="#1-1-项目结构" class="headerlink" title="1.1 项目结构"></a>1.1 项目结构</h2><ul>
+<li>weijinsuo…………项目文件夹<ul>
+<li>js……………….js文件目录              </li>
+<li>lib………………第三方框架目录</li>
+<li>fonts…………….字体文件目录</li>
+<li>images……………图片文件目录</li>
+<li>css………………css文件目录</li>
+<li>favicon.ico……….网站图标</li>
+<li>index.html………..站点入口</li>
+</ul>
+</li>
+</ul>
+<pre><code class="html"><span class="comment">&lt;!--link:favicon--&gt;</span>
+    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">type</span>=<span class="string">"image/x-icon"</span> <span class="attr">href</span>=<span class="string">"favicon.ico"</span>/&gt;</span>
+</code></pre>
+<h2 id="1-2-编码规范"><a href="#1-2-编码规范" class="headerlink" title="1.2 编码规范"></a>1.2 编码规范</h2><h5 id="1-2-1-HTML约定"><a href="#1-2-1-HTML约定" class="headerlink" title="1.2.1 HTML约定"></a>1.2.1 HTML约定</h5><ul>
+<li>在head中引入必要的CSS文件，优先引用第三方的CSS，方便我们自己的样式覆盖。</li>
+<li>在body末尾引入必要的JS文件，<br>  优先引用第三方的JS，<br>  注意JS文件之间的依赖关系，<br>  比如bootstrap.js依赖jQuery，<br>  那就应该先引用jquery.js 然后引用bootstrap.js。</li>
+</ul>
+<h5 id="1-2-2-CSS约定"><a href="#1-2-2-CSS约定" class="headerlink" title="1.2.2.CSS约定"></a>1.2.2.CSS约定</h5><ul>
+<li>除了公共级别样式，其余样式全部由 模块前缀</li>
+<li>尽量使用 直接子代选择器，少用间接子代 避免覆盖</li>
+</ul>
+<h5 id="1-2-3-HTML5文档结构"><a href="#1-2-3-HTML5文档结构" class="headerlink" title="1.2.3 HTML5文档结构"></a>1.2.3 HTML5文档结构</h5><pre><code class="html"><span class="meta">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">title</span>&gt;</span>页面标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">head</span>&gt;</span>
+<span class="tag">&lt;<span class="name">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">html</span>&gt;</span>
+</code></pre>
+<h2 id="1-3-bootstrap常用样式"><a href="#1-3-bootstrap常用样式" class="headerlink" title="1.3 bootstrap常用样式"></a>1.3 bootstrap常用样式</h2><h5 id="1-3-1-container类"><a href="#1-3-1-container类" class="headerlink" title="1.3.1 container类"></a>1.3.1 container类</h5><ul>
+<li>用于定义一个固定宽度且居中的版心</li>
+</ul>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"topbar"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span>
+    <span class="comment">&lt;!--
+      此处的代码会显示在一个固定宽度且居中的容器中
+      该容器的宽度会跟随屏幕的变化而变化
+    --&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<h5 id="1-3-2-栅格系统"><a href="#1-3-2-栅格系统" class="headerlink" title="1.3.2 栅格系统"></a>1.3.2 栅格系统</h5><ul>
+<li>Bootstrap中定义了一套响应式的网格系统，</li>
+<li>其使用方式就是将一个容器划分成12列，</li>
+<li>然后通过col-xx-xx的类名控制每一列的占比</li>
+</ul>
+<h5 id="1-3-3-row类"><a href="#1-3-3-row类" class="headerlink" title="1.3.3.row类"></a>1.3.3.row类</h5><ul>
+<li>因为每一个列默认有一个15px的左右外边距</li>
+<li>row类的一个作用就是通过左右-15px屏蔽掉这个边距</li>
+</ul>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<h5 id="1-3-4-col-类"><a href="#1-3-4-col-类" class="headerlink" title="1.3.4.col-\-*类"></a>1.3.4.col-<em>\</em>-*类</h5><ul>
+<li>col-xs-[列数]：在超小屏幕下展示几份</li>
+<li>col-sm-[列数]：在小屏幕下展示几份</li>
+<li>col-md-[列数]：在中等屏幕下展示几份</li>
+<li>col-lg-[列数]：在大屏幕下展示几份</li>
+<li><strong>xs</strong> : 超小屏幕 手机 (&lt;768px)  </li>
+<li><strong>sm</strong> : 小屏幕 平板 (≥768px) </li>
+<li><strong>md</strong> : 中等屏幕 桌面显示器 (≥992px) </li>
+<li><strong>lg</strong> : 大屏幕 大桌面显示器 (≥1200px)</li>
+</ul>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-2 text-center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-5 text-center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-2 text-center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-3 text-center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<h2 id="1-4-字体图标"><a href="#1-4-字体图标" class="headerlink" title="1.4 字体图标"></a>1.4 字体图标</h2><h3 id="1-4-1-字体图标"><a href="#1-4-1-字体图标" class="headerlink" title="1.4.1 字体图标"></a>1.4.1 字体图标</h3><pre><code class="css">@<span class="keyword">font-face</span> {
+  <span class="attribute">font-family</span>: <span class="string">'XXX'</span>;
+  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'../font/MiFie-Web-Font.eot'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>), 
+  <span class="built_in">url</span>(<span class="string">'../font/MiFie-Web-Font.svg'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>), 
+  <span class="built_in">url</span>(<span class="string">'../font/MiFie-Web-Font.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>), 
+  <span class="built_in">url</span>(<span class="string">'../font/MiFie-Web-Font.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>);
+}
+</code></pre>
+<h5 id="1-4-2-字体文件格式"><a href="#1-4-2-字体文件格式" class="headerlink" title="1.4.2 字体文件格式"></a>1.4.2 字体文件格式</h5><ul>
+<li>eot : embedded-opentype</li>
+<li>svg : svg</li>
+<li>ttf : truetype</li>
+<li>woff : woff</li>
+</ul>
+<h5 id="1-5-1-Bootstrap中轮播图插件叫作Carousel"><a href="#1-5-1-Bootstrap中轮播图插件叫作Carousel" class="headerlink" title="1.5.1.Bootstrap中轮播图插件叫作Carousel"></a>1.5.1.Bootstrap中轮播图插件叫作Carousel</h5><h5 id="1-5-2-基本的轮播图实现"><a href="#1-5-2-基本的轮播图实现" class="headerlink" title="1.5.2.基本的轮播图实现"></a>1.5.2.基本的轮播图实现</h5><pre><code class="html"><span class="comment">&lt;!-- 
+  以下容器就是整个轮播图组件的整体，
+  注意该盒子必须加上 class="carousel slide" data-ride="carousel" 表示当前是一个轮播图
+  bootstrap.js会自动为当前元 素添加图片轮播的特效
+--&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"轮播图的ID"</span> <span class="attr">class</span>=<span class="string">"carousel slide"</span> <span class="attr">data-ride</span>=<span class="string">"carousel"</span>&gt;</span>
+  <span class="comment">&lt;!-- ol标签是图片轮播的控制点 --&gt;</span>
+  <span class="tag">&lt;<span class="name">ol</span> <span class="attr">class</span>=<span class="string">"carousel-indicators"</span>&gt;</span>
+    <span class="comment">&lt;!-- 
+      每一个li就是一个单独的控制点
+        data-target属性就是指定当前控制点控制的是哪一个轮播图，其目的是如果界面上有多个轮播图，便于区分到底控制哪一个
+        data-slide-to属性是指当前的li元素绑定的是第几个轮播项
+      注意，默认必须给其中某个li加上active，展示的时候就是焦点项目
+    --&gt;</span>
+    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-target</span>=<span class="string">"#轮播图的ID"</span> <span class="attr">data-slide-to</span>=<span class="string">"0"</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-target</span>=<span class="string">"#轮播图的ID"</span> <span class="attr">data-slide-to</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+    <span class="comment">&lt;!-- ...更多的 --&gt;</span>
+  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span>
+  <span class="comment">&lt;!-- 
+    .carousel-inner是所有轮播项的容器盒子，
+    注意role="listbox"代表当前div是一个列表盒子，作用就是给当前div添加一个语义
+  --&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"carousel-inner"</span> <span class="attr">role</span>=<span class="string">"listbox"</span>&gt;</span>
+    <span class="comment">&lt;!-- 每一个.item就是单个轮播项目，注意默认要给第一个轮播项目加上active，表示为焦点 --&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item active"</span>&gt;</span>
+      <span class="comment">&lt;!-- 轮播项目中展示的图片 --&gt;</span>
+      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"example.jpg"</span> <span class="attr">alt</span>=<span class="string">"示例图片"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"carousel-caption"</span>&gt;</span>
+        <span class="comment">&lt;!-- 标题或说明性文字，如果不需要，直接删除当前div.carousel-caption --&gt;</span>
+      <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>
+      <span class="comment">&lt;!-- ... --&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="comment">&lt;!-- ... --&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="comment">&lt;!-- 图片轮播上左右两个控制按钮，分别点击可以滚动到上一张和下一张 --&gt;</span>
+  <span class="comment">&lt;!-- 此处需要注意的是 该a链接的href属性必须指向需要控制的轮播图ID --&gt;</span>
+  <span class="comment">&lt;!-- 另外a链接中的data-slide="prev"代表点击该链接会滚到上一张，如果设置为next的话则相反 --&gt;</span>
+  <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"left carousel-control"</span> <span class="attr">href</span>=<span class="string">"#轮播图的ID"</span> <span class="attr">role</span>=<span class="string">"button"</span> <span class="attr">data-slide</span>=<span class="string">"prev"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"glyphicon glyphicon-chevron-left"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>上一张<span class="tag">&lt;/<span class="name">span</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"right carousel-control"</span> <span class="attr">href</span>=<span class="string">"#轮播图的ID"</span> <span class="attr">role</span>=<span class="string">"button"</span> <span class="attr">data-slide</span>=<span class="string">"next"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"glyphicon glyphicon-chevron-right"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>下一张<span class="tag">&lt;/<span class="name">span</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<h4 id="1-6-underscoreJS"><a href="#1-6-underscoreJS" class="headerlink" title="1.6 underscoreJS"></a>1.6 underscoreJS</h4><h5 id="1-6-1-template"><a href="#1-6-1-template" class="headerlink" title="1.6.1 _.template"></a>1.6.1 _.template</h5><pre><code class="html"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">class</span>=<span class="string">"carousel-indicators"</span>&gt;</span>
+  <span class="comment">&lt;!--渲染的HTML字符串--&gt;</span>
+<span class="tag">&lt;/<span class="name">ol</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"carousel-inner"</span> <span class="attr">role</span>=<span class="string">"listbox"</span>&gt;</span>
+  <span class="comment">&lt;!--渲染的HTML字符串--&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="javascript"><span class="comment">/*取到模版当中的字符串*/</span>
+<span class="keyword">var</span> pointTemplateStr = $(<span class="string">'#point_template'</span>).html();
+<span class="keyword">var</span> imageTemplateStr = $(<span class="string">'#image_template'</span>).html();
+<span class="comment">/*转化成模版函数*/</span>
+<span class="keyword">var</span> pointTemplate = _.template(pointTemplateStr);
+<span class="keyword">var</span> imageTemplate = _.template(imageTemplateStr);
+<span class="comment">/*传入数据 解析成 html 字符*/</span>
+<span class="keyword">var</span> pointHtml = pointTemplate({<span class="attr">model</span>:data});
+<span class="keyword">var</span> imageHtml = imageTemplate({<span class="attr">model</span>:data,<span class="attr">isMobile</span>:isMobile});<span class="comment">//我们只需要再加一个属性</span>
+<span class="comment">/*把html字符串渲染在页面当中*/</span>
+$(<span class="string">'.carousel-indicators'</span>).html(pointHtml);
+$(<span class="string">'.carousel-inner'</span>).html(imageHtml);
+</code></pre>
+<pre><code class="html"><span class="comment">&lt;!--点模版--&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/template"</span> <span class="attr">id</span>=<span class="string">"point_template"</span>&gt;</span><span class="javascript">
+    &lt;%_.each(model,<span class="function"><span class="keyword">function</span>(<span class="params">obj,i</span>)</span>{%&gt;
+        <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">data-target</span>=<span class="string">"#carousel-example-generic"</span> <span class="attr">data-slide-to</span>=<span class="string">"&lt;%=i%&gt;"</span> <span class="attr">class</span>=<span class="string">"&lt;%=(i==0?'active':'')%&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>
+    &lt;%})%&gt;
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="comment">&lt;!--图片模版--&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/template"</span> <span class="attr">id</span>=<span class="string">"image_template"</span>&gt;</span><span class="javascript">
+    &lt;%_.each(model,<span class="function"><span class="keyword">function</span>(<span class="params">obj,i</span>)</span>{%&gt;
+        <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item &lt;%=(i==0?'active':'')%&gt;"</span>&gt;</span>
+            <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">isMobile</span>){ %&gt;</span>
+                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"m_imgBox"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&lt;%=obj.img%&gt;"</span> <span class="attr">alt</span>=<span class="string">""</span>/&gt;</span>
+                <span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+            <span class="tag">&lt;<span class="name">%}</span> <span class="attr">else</span> {%&gt;</span>
+                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"pc_imgBox"</span> <span class="attr">style</span>=<span class="string">"background-image:url(&lt;%=obj.bac%&gt;)"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+            <span class="tag">&lt;<span class="name">%}%</span>&gt;</span>
+        <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%})%</span>&gt;</span>
+</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+<h4 id="1-7-导航栏"><a href="#1-7-导航栏" class="headerlink" title="1.7 导航栏"></a>1.7 导航栏</h4><h4 id="1-8-常用类"><a href="#1-8-常用类" class="headerlink" title="1.8 常用类"></a>1.8 常用类</h4><p>container类<br>用于定义一个固定宽度且居中的版心   </p>
+<p>row类<br>因为每一个列默认有一个15px的左右外边距，row类的一个作用就是通过左右-15px屏蔽掉这个边距 </p>
+<p>col-<em>*-</em>类<br>col-xs-[列数]：在超小屏幕下展示几份<br>col-sm-[列数]：在小屏幕下展示几份<br>col-md-[列数]：在中等屏幕下展示几份<br>col-lg-[列数]：在大屏幕下展示几份<br>xs : 超小屏幕 手机 (&lt;768px)<br>sm : 小屏幕 平板 (≥768px)<br>md : 中等屏幕 桌面显示器 (≥992px)<br>lg : 大屏幕 大桌面显示器 (≥1200px) </p>
+<p>push  pull  offset</p>
+<p>hidden 类<br>hidden-xs,hidden-sm,hidden-md,hidden-lg在不同的屏幕下隐藏。</p>
+<p>text-* 类<br>     text-center 文本居中<br>     text-left 文本左对齐<br>     text-right 文本右对齐</p>
+<p> pull-* 类<br> pull-left 左浮动类<br> pull-right 右浮动类</p>
+<p>center-block 类<br>让一个固定宽度的元素居中。</p>
